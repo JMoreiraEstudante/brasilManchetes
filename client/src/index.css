@@ -12,7 +12,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: table;
-  margin-top: 15vh;
+  margin-top: 20vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 header {
@@ -34,7 +39,7 @@ h1 {
 .add-form {
   display: flex;
   flex-direction: row;
-  width: 480px;
+  width: inherit;
   padding-bottom: 1vh;
   justify-content: space-between;
 }
@@ -42,7 +47,7 @@ h1 {
 .left {
   display: flex;
   flex-direction: row;
-  width: 305px;
+  width: 52%;
   justify-content: space-between;
 }
 
@@ -51,9 +56,9 @@ input[type=text], select, input[type=submit]{
     float:left;
     margin:0;
     border:0;
-    padding:6px 10px;
-    font-size:14px;
-    border-radius: 4px;
+    padding:5px 9px;
+    font-size:12px;
+    border-radius: 3px;
 }
 
 input[type=text], select {

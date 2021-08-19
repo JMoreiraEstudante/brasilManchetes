@@ -18,7 +18,7 @@ function App() {
 
   //get todos screenshots
   const fetchOneScreenshots = async () => {
-    const res = await fetch('http://localhost:3001/screenshot')
+    const res = await fetch('https://api-manchete-brasil.herokuapp.com/screenshot')
     const data = await res.json()
     return data
   }
@@ -27,7 +27,7 @@ function App() {
   //date: dia-mes-ano
   const fetchScreenshots = async (screenshot) => {
     console.log(screenshot)
-    const res = await fetch(`http://localhost:3001/screenshots/${screenshot['data']}/${screenshot['jornal']}`)
+    const res = await fetch(`https://api-manchete-brasil.herokuapp.com/screenshots/${screenshot['data']}/${screenshot['jornal']}`)
     const data = await res.json()
     console.log(data[0]['imagem']['data'])
     setScreenshots(data)
