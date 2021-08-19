@@ -1,18 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+html {
+  padding: 0;
+}
+
+body {
+  padding: 0;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
   display: table;
-  margin-top: 25px;
+  margin-top: 15vh;
 }
 
-.header {
+header {
   background-color: black;
   color:#efefef; 
-  width: 160vw;
-  padding: 1px 0;
-  margin:-10px -30vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.88;
 }
 
 h1 {
