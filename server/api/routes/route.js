@@ -6,16 +6,19 @@ module.exports = function (app) {
 
     // screenshotList Routes
 
-    // get and post request for /todos endpoints
+    // get request for /screenshots endpoints
     app
         .route("/screenshots")
         .get(screenshotList.listAllScreenshots)
         //.post(todoList.createNewTodo);
 
-    // put and delete request for /todos endpoints
+    // get request for /screenshots/:data/:jornal endpoints
     app
-        .route("/screenshots/:data")
+        .route("/screenshots/:data/:jornal")
         .get(screenshotList.listScreenshots)
-        /*.put(todoList.updateTodo)
-        .delete(todoList.deleteTodo);*/
+
+    // get request for /screenshot endpoints
+    app
+        .route("/screenshot")
+        .get(screenshotList.listOneScreenshot)
 };

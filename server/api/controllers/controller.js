@@ -13,6 +13,16 @@ exports.listAllScreenshots = (req, res) => {
     });
 };
 
+//listar todas as screenshots
+exports.listOneScreenshot = (req, res) => {
+    Screenshot.findOne({}, (err, screenshot) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        res.status(200).json(screenshot);
+    });
+};
+
 //listar todas as screenshots de um certo dia
 exports.listScreenshots = (req, res) => {
     //req.params.data : dia-mes-ano
@@ -20,7 +30,7 @@ exports.listScreenshots = (req, res) => {
     data = req.params.data.split("-");
     inicio = new Date(parseInt(data[2]), parseInt(data[1])-1, parseInt(data[0]), 0, 0, 0, 0)
     fim = new Date(parseInt(data[2]), parseInt(data[1])-1, parseInt(data[0]), 23, 59, 59, 999)
-    Screenshot.find({"data":{"$gte":inicio,"$lte":fim}}, (err, screenshot) => {
+    Screenshot.find({"data":{"$gte":inicio,"$lte":fim}, "jornal":req.params.jornal}, (err, screenshot) => {
         if (err) {
             res.status(500).send(err);
         }
